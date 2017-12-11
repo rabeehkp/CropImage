@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		593EAA521FDE70BF00B2F0F9 /* CropImagesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 593EAA511FDE70BF00B2F0F9 /* CropImagesVC.swift */; };
 		59960BFE1FDB2F350020B74E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59960BFD1FDB2F350020B74E /* AppDelegate.swift */; };
 		59960C001FDB2F350020B74E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59960BFF1FDB2F350020B74E /* ViewController.swift */; };
 		59960C031FDB2F350020B74E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 59960C011FDB2F350020B74E /* Main.storyboard */; };
@@ -14,6 +15,8 @@
 		59960C081FDB2F350020B74E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 59960C071FDB2F350020B74E /* Assets.xcassets */; };
 		59960C0B1FDB2F350020B74E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 59960C091FDB2F350020B74E /* LaunchScreen.storyboard */; };
 		59960C161FDB2F370020B74E /* ImageAndCamaraViewerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59960C151FDB2F370020B74E /* ImageAndCamaraViewerTests.swift */; };
+		59960C211FDB32300020B74E /* CamaraHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59960C201FDB32300020B74E /* CamaraHandler.swift */; };
+		59960C231FDBFAA80020B74E /* AVCaptureStillImageOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59960C221FDBFAA80020B74E /* AVCaptureStillImageOutput.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -27,6 +30,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		593EAA511FDE70BF00B2F0F9 /* CropImagesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CropImagesVC.swift; sourceTree = "<group>"; };
 		59960BFA1FDB2F350020B74E /* ImageAndCamaraViewer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ImageAndCamaraViewer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		59960BFD1FDB2F350020B74E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		59960BFF1FDB2F350020B74E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -38,6 +42,8 @@
 		59960C111FDB2F370020B74E /* ImageAndCamaraViewerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ImageAndCamaraViewerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		59960C151FDB2F370020B74E /* ImageAndCamaraViewerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageAndCamaraViewerTests.swift; sourceTree = "<group>"; };
 		59960C171FDB2F370020B74E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		59960C201FDB32300020B74E /* CamaraHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CamaraHandler.swift; sourceTree = "<group>"; };
+		59960C221FDBFAA80020B74E /* AVCaptureStillImageOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AVCaptureStillImageOutput.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +92,9 @@
 				59960C091FDB2F350020B74E /* LaunchScreen.storyboard */,
 				59960C0C1FDB2F350020B74E /* Info.plist */,
 				59960C041FDB2F350020B74E /* ImageAndCamaraViewer.xcdatamodeld */,
+				59960C201FDB32300020B74E /* CamaraHandler.swift */,
+				59960C221FDBFAA80020B74E /* AVCaptureStillImageOutput.swift */,
+				593EAA511FDE70BF00B2F0F9 /* CropImagesVC.swift */,
 			);
 			path = ImageAndCamaraViewer;
 			sourceTree = "<group>";
@@ -202,7 +211,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				593EAA521FDE70BF00B2F0F9 /* CropImagesVC.swift in Sources */,
 				59960C061FDB2F350020B74E /* ImageAndCamaraViewer.xcdatamodeld in Sources */,
+				59960C211FDB32300020B74E /* CamaraHandler.swift in Sources */,
+				59960C231FDBFAA80020B74E /* AVCaptureStillImageOutput.swift in Sources */,
 				59960C001FDB2F350020B74E /* ViewController.swift in Sources */,
 				59960BFE1FDB2F350020B74E /* AppDelegate.swift in Sources */,
 			);
@@ -358,7 +370,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = CZ6TZM89R5;
 				INFOPLIST_FILE = ImageAndCamaraViewer/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.-ImageAndCamaraViewer.ImageAndCamaraViewer";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -372,7 +386,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = CZ6TZM89R5;
 				INFOPLIST_FILE = ImageAndCamaraViewer/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.-ImageAndCamaraViewer.ImageAndCamaraViewer";
 				PRODUCT_NAME = "$(TARGET_NAME)";

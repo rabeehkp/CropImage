@@ -1,0 +1,6 @@
+framework module Pods_ImageAndCamaraViewer {
+  umbrella header "Pods-ImageAndCamaraViewer-umbrella.h"
+
+  export *
+  module * { export * }
+}

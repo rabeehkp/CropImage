@@ -8,19 +8,27 @@
 
 import UIKit
 
-class ViewController: UIViewController, UIImagePickerControllerDelegate,UINavigationControllerDelegate {
+class ViewController: UIViewController, UIImagePickerControllerDelegate,UINavigationControllerDelegate, UIScrollViewDelegate {
     //MARK: -Variables
     var galleryBtnCenter: CGPoint!
     var cameraBtnCenter: CGPoint!
     var clicked: Bool = true
     //MARK: -Outlets
     @IBOutlet weak var ImagePreviewView: UIView!
+    @IBOutlet weak var CropImagesView: UIView!
     @IBOutlet weak var CaptureImageView: UIImageView!
     @IBOutlet weak var CaptureButton: UIButton!
     @IBOutlet weak var OpenPhotoLibrary: UIButton!
     @IBOutlet weak var SaveBtn: UIBarButtonItem!
+    @IBOutlet weak var CropBtn: UIButton!
     @IBOutlet weak var attachmentBtn: UIButton!
-    
+    @IBOutlet weak var ScrollView: UIScrollView!{
+        didSet{
+            ScrollView.delegate = self
+            //            ScrollView.minimumZoomScale = 1.0
+            //            ScrollView.maximumZoomScale = 10.0
+        }
+    }
     
     
     //MARK: -ViewMethords
@@ -35,6 +43,8 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate,UINaviga
         CaptureButton.layer.cornerRadius = 25
         OpenPhotoLibrary.layer.cornerRadius = 25
         attachmentBtn.layer.cornerRadius = 25
+        CropImagesView.layer.borderColor = UIColor.white.cgColor
+        CropImagesView.layer.borderWidth = 2
         
     }
     override func viewWillAppear(_ animated: Bool) {
@@ -111,6 +121,41 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate,UINaviga
             button.setImage(offImage, for: .normal)
         }
     }
+    
+    //
+    
+    @IBAction func cropBtn(_ sender: UIButton) {
+        //change to crop button
+        var img = UIImage ()
+        if let croppedCGImage = CaptureImageView.image?.cgImage?.cropping(to: cropArea){
+            let croppedImage = UIImage(cgImage: croppedCGImage)
+            //CropImagesView.image = croppedImage
+            img = croppedImage
+        }
+        
+        let  storyboard =  UIStoryboard(name: "Main", bundle: nil)
+        let  destination = storyboard.instantiateViewController(withIdentifier: "ImgShowingVC") as! ImgShowingVC
+        destination.recievingImg = img
+        self.present(destination, animated: true, completion: nil)
+    }
+    //MARK: -Closure create
+    var cropArea:CGRect{
+        get{
+            let factor = CaptureImageView.image!.size.width / ImagePreviewView.frame.width
+            let heightFactor = CaptureImageView.image!.size.height / view.frame.height
+            let scale = 1 / ScrollView.zoomScale
+            
+            let x = (CropImagesView.frame.origin.x - CaptureImageView.frame.origin.x) * scale * factor
+            let y = (CropImagesView.frame.origin.y - CaptureImageView.frame.origin.y) * scale * factor
+            let calcHeight = CaptureImageView.frame.size.height - CropImagesView.frame.size.height
+            let viewWidth = CropImagesView.frame.size.width * factor * scale
+            let viewHeight = CropImagesView.frame.size.height * factor // * heightFactor  * calcHeight
+            return CGRect(x: x, y: y, width: viewWidth, height: viewHeight)
+            
+        }
+    }
+    
+    //
 
 
 }

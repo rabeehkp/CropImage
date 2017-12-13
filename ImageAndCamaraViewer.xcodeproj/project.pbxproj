@@ -12,6 +12,7 @@
 		593EAA541FDF947C00B2F0F9 /* CropingFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 593EAA531FDF947C00B2F0F9 /* CropingFunction.swift */; };
 		593EAA561FDFB83C00B2F0F9 /* CropAreaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 593EAA551FDFB83C00B2F0F9 /* CropAreaView.swift */; };
 		593EAA581FDFF75B00B2F0F9 /* CropingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 593EAA571FDFF75A00B2F0F9 /* CropingVC.swift */; };
+		593EAA5A1FE0E46A00B2F0F9 /* ImgShowingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 593EAA591FE0E46A00B2F0F9 /* ImgShowingVC.swift */; };
 		59960BFE1FDB2F350020B74E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59960BFD1FDB2F350020B74E /* AppDelegate.swift */; };
 		59960C001FDB2F350020B74E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59960BFF1FDB2F350020B74E /* ViewController.swift */; };
 		59960C031FDB2F350020B74E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 59960C011FDB2F350020B74E /* Main.storyboard */; };
@@ -39,6 +40,7 @@
 		593EAA531FDF947C00B2F0F9 /* CropingFunction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CropingFunction.swift; sourceTree = "<group>"; };
 		593EAA551FDFB83C00B2F0F9 /* CropAreaView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CropAreaView.swift; sourceTree = "<group>"; };
 		593EAA571FDFF75A00B2F0F9 /* CropingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CropingVC.swift; sourceTree = "<group>"; };
+		593EAA591FE0E46A00B2F0F9 /* ImgShowingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImgShowingVC.swift; sourceTree = "<group>"; };
 		59960BFA1FDB2F350020B74E /* ImageAndCamaraViewer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ImageAndCamaraViewer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		59960BFD1FDB2F350020B74E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		59960BFF1FDB2F350020B74E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -127,6 +129,7 @@
 				593EAA531FDF947C00B2F0F9 /* CropingFunction.swift */,
 				593EAA551FDFB83C00B2F0F9 /* CropAreaView.swift */,
 				593EAA571FDFF75A00B2F0F9 /* CropingVC.swift */,
+				593EAA591FE0E46A00B2F0F9 /* ImgShowingVC.swift */,
 			);
 			path = ImageAndCamaraViewer;
 			sourceTree = "<group>";
@@ -362,6 +365,7 @@
 			files = (
 				593EAA521FDE70BF00B2F0F9 /* CropImagesVC.swift in Sources */,
 				59960C061FDB2F350020B74E /* ImageAndCamaraViewer.xcdatamodeld in Sources */,
+				593EAA5A1FE0E46A00B2F0F9 /* ImgShowingVC.swift in Sources */,
 				593EAA581FDFF75B00B2F0F9 /* CropingVC.swift in Sources */,
 				593EAA541FDF947C00B2F0F9 /* CropingFunction.swift in Sources */,
 				59960C211FDB32300020B74E /* CamaraHandler.swift in Sources */,

@@ -13,13 +13,27 @@ class ImgShowingVC: UIViewController {
     //MARK: -Variables
     var recievingImg = UIImage()
     
-    @IBOutlet weak var Backbtn: UIButton!
+    @IBOutlet weak var SaveButton: UIBarButtonItem!
     //MARK: -Outlets
+    @IBOutlet weak var CancelButton: UIBarButtonItem!
     @IBOutlet weak var ImgShowingView: UIImageView!
     
     //MARK: -Action
-    @IBAction func GoBackBtn(_ sender: UIButton) {
+    @IBAction func SaveBtn(_ sender: UIBarButtonItem) {
         dismiss(animated: false, completion: nil)
+        let imageData = UIImageJPEGRepresentation(ImgShowingView.image!, 0.6)
+        let compressedJPGImage = UIImage(data: imageData!)
+        UIImageWriteToSavedPhotosAlbum(compressedJPGImage!, nil, nil, nil)
+        
+        let alert = UIAlertView(title: "SAVED",
+                                message: "Your image has been saved to Photo Library!",
+                                delegate: nil,
+                                cancelButtonTitle: "Ok")
+        
+        alert.show()
+    }
+    @IBAction func CancelBtn(_ sender: UIBarButtonItem) {
+    dismiss(animated: false, completion: nil)
     }
     
     

@@ -25,8 +25,8 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate,UINaviga
     @IBOutlet weak var ScrollView: UIScrollView!{
         didSet{
             ScrollView.delegate = self
-            //            ScrollView.minimumZoomScale = 1.0
-            //            ScrollView.maximumZoomScale = 10.0
+                        ScrollView.minimumZoomScale = 1.0
+                        ScrollView.maximumZoomScale = 10.0
         }
     }
     
@@ -102,15 +102,20 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate,UINaviga
         dismiss(animated:true, completion: nil)
     }
     @IBAction func saveButt(sender: AnyObject) {
-        let imageData = UIImageJPEGRepresentation(CaptureImageView.image!, 0.6)
-        let compressedJPGImage = UIImage(data: imageData!)
-        UIImageWriteToSavedPhotosAlbum(compressedJPGImage!, nil, nil, nil)
+        let originalOrientation = self.CaptureImageView.image?.imageOrientation
         
-        let alert = UIAlertView(title: "SAVED",
-                                message: "Your image has been saved to Photo Library!",
-                                delegate: nil,
-                                cancelButtonTitle: "Ok")
-        alert.show()
+        var img = UIImage ()
+        if let croppedCGImage = CaptureImageView.image?.cgImage?.cropping(to: cropArea){
+            //let croppedImage = UIImage(cgImage: croppedCGImage)
+            let CroppedImage = UIImage(cgImage: croppedCGImage, scale: (self.CaptureImageView.image?.scale)!, orientation: (originalOrientation)!)
+            img = CroppedImage
+        }
+        
+        let  storyboard =  UIStoryboard(name: "Main", bundle: nil)
+        let  destination = storyboard.instantiateViewController(withIdentifier: "ImgShowingVC") as! ImgShowingVC
+        destination.recievingImg = img
+        self.present(destination, animated: true, completion: nil)
+        
     }
 
     func changeImage(button: UIButton , onImage :UIImage, offImage: UIImage){
@@ -126,28 +131,17 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate,UINaviga
     
     @IBAction func cropBtn(_ sender: UIButton) {
         //change to crop button
-        var img = UIImage ()
-        if let croppedCGImage = CaptureImageView.image?.cgImage?.cropping(to: cropArea){
-            let croppedImage = UIImage(cgImage: croppedCGImage)
-            //CropImagesView.image = croppedImage
-            img = croppedImage
-        }
         
-        let  storyboard =  UIStoryboard(name: "Main", bundle: nil)
-        let  destination = storyboard.instantiateViewController(withIdentifier: "ImgShowingVC") as! ImgShowingVC
-        destination.recievingImg = img
-        self.present(destination, animated: true, completion: nil)
     }
     //MARK: -Closure create
     var cropArea:CGRect{
         get{
             let factor = CaptureImageView.image!.size.width / ImagePreviewView.frame.width
             let heightFactor = CaptureImageView.image!.size.height / view.frame.height
-            let scale = 1 / ScrollView.zoomScale
+            let scale = ScrollView.zoomScale
             
             let x = (CropImagesView.frame.origin.x - CaptureImageView.frame.origin.x) * scale * factor
             let y = (CropImagesView.frame.origin.y - CaptureImageView.frame.origin.y) * scale * factor
-            let calcHeight = CaptureImageView.frame.size.height - CropImagesView.frame.size.height
             let viewWidth = CropImagesView.frame.size.width * factor * scale
             let viewHeight = CropImagesView.frame.size.height * factor // * heightFactor  * calcHeight
             return CGRect(x: x, y: y, width: viewWidth, height: viewHeight)
@@ -156,7 +150,9 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate,UINaviga
     }
     
     //
-
+    func viewForZooming(in scrollView: UIScrollView) -> UIView? {
+                return CaptureImageView
+            }
 
 }
 //extension ViewController: UINavigationControllerDelegate, UIImagePickerControllerDelegate {

@@ -378,21 +378,22 @@
                                         </constraints>
                                     </scrollView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XsB-AX-E8d">
-                                        <rect key="frame" x="70" y="118" width="235" height="172"/>
+                                        <rect key="frame" x="87" y="104" width="200" height="200"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </view>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstItem="XsB-AX-E8d" firstAttribute="centerY" secondItem="3KK-0N-aGv" secondAttribute="centerY" id="E70-aZ-0cl"/>
-                                    <constraint firstAttribute="trailing" secondItem="XsB-AX-E8d" secondAttribute="trailing" constant="70" id="H2D-MC-cgf"/>
-                                    <constraint firstItem="XsB-AX-E8d" firstAttribute="top" secondItem="3KK-0N-aGv" secondAttribute="top" constant="118" id="JzC-ua-gc0"/>
+                                    <constraint firstAttribute="bottom" secondItem="XsB-AX-E8d" secondAttribute="bottom" constant="104" id="3Bj-uT-Kxw"/>
+                                    <constraint firstItem="XsB-AX-E8d" firstAttribute="top" secondItem="3KK-0N-aGv" secondAttribute="top" constant="104" id="4J1-CF-AMI"/>
                                     <constraint firstItem="IMU-KO-KO5" firstAttribute="centerX" secondItem="3KK-0N-aGv" secondAttribute="centerX" id="Jzd-o5-EEu"/>
-                                    <constraint firstItem="XsB-AX-E8d" firstAttribute="leading" secondItem="3KK-0N-aGv" secondAttribute="leading" constant="70" id="M1d-kf-V2P"/>
+                                    <constraint firstItem="XsB-AX-E8d" firstAttribute="centerY" secondItem="3KK-0N-aGv" secondAttribute="centerY" id="Mm7-lD-V4J"/>
                                     <constraint firstItem="IMU-KO-KO5" firstAttribute="centerY" secondItem="3KK-0N-aGv" secondAttribute="centerY" id="QEc-KZ-2HD"/>
                                     <constraint firstAttribute="bottom" secondItem="IMU-KO-KO5" secondAttribute="bottom" id="Rco-re-vAC"/>
                                     <constraint firstItem="IMU-KO-KO5" firstAttribute="top" secondItem="3KK-0N-aGv" secondAttribute="top" id="at8-kM-Zns"/>
-                                    <constraint firstItem="XsB-AX-E8d" firstAttribute="centerX" secondItem="3KK-0N-aGv" secondAttribute="centerX" id="chk-bA-1fe"/>
+                                    <constraint firstAttribute="trailing" secondItem="XsB-AX-E8d" secondAttribute="trailing" constant="88" id="bMU-4r-Dev"/>
+                                    <constraint firstItem="XsB-AX-E8d" firstAttribute="leading" secondItem="3KK-0N-aGv" secondAttribute="leading" constant="87" id="g7J-V5-ZZo"/>
+                                    <constraint firstItem="XsB-AX-E8d" firstAttribute="centerX" secondItem="3KK-0N-aGv" secondAttribute="centerX" id="jQO-rx-Q4Q"/>
                                     <constraint firstItem="IMU-KO-KO5" firstAttribute="leading" secondItem="3KK-0N-aGv" secondAttribute="leading" id="wzA-X2-3Nr"/>
                                     <constraint firstAttribute="trailing" secondItem="IMU-KO-KO5" secondAttribute="trailing" id="ycx-b1-g65"/>
                                 </constraints>

@@ -148,6 +148,8 @@ class CropImagesVC: UIViewController , UINavigationControllerDelegate, UIImagePi
             
             return CGRect(x: x, y: y, width: viewWidth, height: viewHeight)
             //
+            
+            
         }
     }
     

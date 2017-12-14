@@ -11,7 +11,9 @@ import UIKit
 class CropingVC: UIViewController , UIScrollViewDelegate,UINavigationControllerDelegate,UIImagePickerControllerDelegate {
     
     //MARK: -Variables
-    
+    var imageViewScaleCurrent: CGFloat! = 1.0;
+    var imageViewScaleMin: CGFloat! = 0.5;
+    var imageViewScaleMax: CGFloat! = 5.0;
     
     //MARK: -Outlets
     @IBOutlet weak var SubView: UIView!
@@ -77,6 +79,16 @@ class CropingVC: UIViewController , UIScrollViewDelegate,UINavigationControllerD
             CropButton.isEnabled = false
             ClearButton.isEnabled = false
         }
+        if ShowBtnView.transform != .identity{
+        UIView.animate(withDuration: 0.3, animations: {
+            self.ShowBtnView.transform = .identity
+            
+            
+        }, completion: { (true) in
+            self.ShowBtnView.isHidden = true
+            self.ShowButtons.setTitle("Photos", for: .normal)
+        })
+        }
     }
     @IBAction func ShowDeviceGalleryBtn(_ sender: UIButton) {
         if UIImagePickerController.isSourceTypeAvailable(.photoLibrary) {
@@ -134,27 +146,29 @@ class CropingVC: UIViewController , UIScrollViewDelegate,UINavigationControllerD
     }
     
     //MARK: -Functions
-    //Show image in img view from camara and device
+     //Show image in img view from camara and device
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         let image = info[UIImagePickerControllerOriginalImage] as! UIImage
         ShowImages.image = image
         dismiss(animated:true, completion: nil)
     }
-    //For zoom
+    //Zoom images
     func viewForZooming(in scrollView: UIScrollView) -> UIView? {
         return ShowImages
     }
     //MARK: -Closure
+     // croping images here
     var cropArea:CGRect{
         get{
-            let factor = ShowImages.image!.size.width / CropingFrameView.frame.width
              let heightFactor = ShowImages.image!.size.height / view.frame.height
-              let scale = scrollView.zoomScale
-               let x = (CropingFrameView.frame.origin.x - ShowImages.frame.origin.x) * scale * factor
-              let y = (CropingFrameView.frame.origin.y - ShowImages.frame.origin.y) * scale * factor
-             let viewWidth = CropingFrameView.frame.size.width * factor * scale
-            let viewHeight = CropingFrameView.frame.size.height * factor * heightFactor
-        return CGRect(x: x, y: y , width: viewWidth, height: viewHeight)
+            let factors = self.ShowImages.image!.size.width / self.view.frame.width
+            let scales = 1 / self.scrollView.zoomScale
+            let ImgScale = (ShowImages.image?.scale)!
+            let xx = (self.CropingFrameView.frame.origin.x - self.ShowImages.frame.origin.x) * ImgScale * scales * factors
+            let yy = (self.CropingFrameView.frame.origin.y - self.ShowImages.frame.origin.y) * ImgScale * scales * heightFactor
+            let width = self.CropingFrameView.frame.size.width * scales * factors
+            let height = self.CropingFrameView.frame.size.height * scales * factors
+            return CGRect(x: xx, y: yy, width: width, height: height)
         }
     }
 }

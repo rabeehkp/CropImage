@@ -46,6 +46,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate,UINaviga
         CropImagesView.layer.borderColor = UIColor.white.cgColor
         CropImagesView.layer.borderWidth = 2
         
+        
     }
     override func viewWillAppear(_ animated: Bool) {
       

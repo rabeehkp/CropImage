@@ -30,6 +30,7 @@ class CropingVC: UIViewController , UIScrollViewDelegate,UINavigationControllerD
             scrollView.delegate = self
             scrollView.minimumZoomScale = 1.0
             scrollView.maximumZoomScale = 10.0
+            scrollView.clipsToBounds = true
         }
     }
     
@@ -61,7 +62,7 @@ class CropingVC: UIViewController , UIScrollViewDelegate,UINavigationControllerD
     @IBAction func CropBtn(_ sender: UIBarButtonItem) {
         var img = UIImage ()
         let originalOrientation = self.ShowImages.image?.imageOrientation
-        if let croppedCGImage = ShowImages.image?.cgImage?.cropping(to: cropArea){
+        if let croppedCGImage = ShowImages.image?.cgImage?.cropping(to: CropArea){
             //let croppedImage = UIImage(cgImage: croppedCGImage)
             let croppedImage = UIImage(cgImage: croppedCGImage, scale: (self.ShowImages.image?.scale)!, orientation: (originalOrientation)!)
             img = croppedImage
@@ -89,6 +90,7 @@ class CropingVC: UIViewController , UIScrollViewDelegate,UINavigationControllerD
             self.ShowButtons.setTitle("Photos", for: .normal)
         })
         }
+        scrollView.zoomScale = 1
     }
     @IBAction func ShowDeviceGalleryBtn(_ sender: UIButton) {
         if UIImagePickerController.isSourceTypeAvailable(.photoLibrary) {
@@ -100,7 +102,7 @@ class CropingVC: UIViewController , UIScrollViewDelegate,UINavigationControllerD
         }
         UIView.animate(withDuration: 0.3, animations: {
             self.ShowBtnView.transform = .identity
-            
+            self.ShowCamera.setTitle("Photos", for: .normal)
             
         }, completion: { (true) in
             self.ShowBtnView.isHidden = true
@@ -117,7 +119,7 @@ class CropingVC: UIViewController , UIScrollViewDelegate,UINavigationControllerD
         }
         UIView.animate(withDuration: 0.3, animations: {
             self.ShowBtnView.transform = .identity
-            
+            self.ShowCamera.setTitle("Photos", for: .normal)
             
         }, completion: { (true) in
             self.ShowBtnView.isHidden = true
@@ -126,8 +128,9 @@ class CropingVC: UIViewController , UIScrollViewDelegate,UINavigationControllerD
     }
     @IBAction func ShowButtons(_ sender: UIButton) {
         if ShowBtnView.transform == .identity{
-            UIView.animate(withDuration: 0.5, animations: {
+            UIView.animate(withDuration: 0.3, animations: {
                 self.ShowBtnView.transform = CGAffineTransform(translationX: 0, y: -100)
+                self.ShowCamera.setTitle("Camera", for: .normal)
             }) { (true) in
             }
             ShowBtnView.isHidden = false
@@ -136,7 +139,7 @@ class CropingVC: UIViewController , UIScrollViewDelegate,UINavigationControllerD
         else{
             UIView.animate(withDuration: 0.3, animations: {
                 self.ShowBtnView.transform = .identity
-                
+                self.ShowCamera.setTitle("Photos", for: .normal)
                 
             }, completion: { (true) in
                 self.ShowBtnView.isHidden = true
@@ -152,7 +155,7 @@ class CropingVC: UIViewController , UIScrollViewDelegate,UINavigationControllerD
         ShowImages.image = image
         dismiss(animated:true, completion: nil)
     }
-    //Zoom images
+    // Zoom images
     func viewForZooming(in scrollView: UIScrollView) -> UIView? {
         return ShowImages
     }
@@ -160,15 +163,48 @@ class CropingVC: UIViewController , UIScrollViewDelegate,UINavigationControllerD
      // croping images here
     var cropArea:CGRect{
         get{
-             let heightFactor = ShowImages.image!.size.height / view.frame.height
+            let heightFactor = ShowImages.image!.size.height / self.view.frame.height
             let factors = self.ShowImages.image!.size.width / self.view.frame.width
             let scales = 1 / self.scrollView.zoomScale
             let ImgScale = (ShowImages.image?.scale)!
-            let xx = (self.CropingFrameView.frame.origin.x - self.ShowImages.frame.origin.x) * ImgScale * scales * factors
-            let yy = (self.CropingFrameView.frame.origin.y - self.ShowImages.frame.origin.y) * ImgScale * scales * heightFactor
+            let xx = ( scrollView.contentOffset.x + self.CropingFrameView.frame.origin.x - self.ShowImages.frame.origin.x) * ImgScale * scales * factors
+            let yy = (scrollView.contentOffset.y + self.CropingFrameView.frame.origin.y - self.ShowImages.frame.origin.y) * ImgScale * scales * heightFactor
             let width = self.CropingFrameView.frame.size.width * scales * factors
             let height = self.CropingFrameView.frame.size.height * scales * factors
             return CGRect(x: xx, y: yy, width: width, height: height)
         }
     }
+    var CropArea:CGRect{
+        get{
+            let factor = ShowImages.image!.size.width/view.frame.width
+            let scale = 1/scrollView.zoomScale
+            let ImgScale = (ShowImages.image?.scale)!
+            let imageFrame = ShowImages.imageFrame()
+            let x = (scrollView.contentOffset.x + CropingFrameView.frame.origin.x - imageFrame.origin.x) * scale * factor
+            let y = (scrollView.contentOffset.y + CropingFrameView.frame.origin.y - imageFrame.origin.y)  * scale * factor
+            let width = CropingFrameView.frame.size.width * scale * factor
+            let height = CropingFrameView.frame.size.height * scale * factor
+            return CGRect(x: x, y: y, width: width, height: height)
+        }
+    }
 }
+extension UIImageView{
+    func imageFrame()->CGRect{
+        let imageViewSize = self.frame.size
+        guard let imageSize = self.image?.size else{return CGRect.zero}
+        let imageRatio = imageSize.width / imageSize.height
+        let imageViewRatio = imageViewSize.width / imageViewSize.height
+        if imageRatio < imageViewRatio {
+            let scaleFactor = imageViewSize.height / imageSize.height
+            let width = imageSize.width * scaleFactor
+            let topLeftX = (imageViewSize.width - width) * 0.5
+            return CGRect(x: topLeftX, y: 0, width: width, height: imageViewSize.height)
+        }else{
+            let scalFactor = imageViewSize.width / imageSize.width
+            let height = imageSize.height * scalFactor
+            let topLeftY = (imageViewSize.height - height) * 0.5
+            return CGRect(x: 0, y: topLeftY, width: imageViewSize.width, height: height)
+        }
+    }
+}
+

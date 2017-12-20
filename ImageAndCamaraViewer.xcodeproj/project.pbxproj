@@ -22,6 +22,7 @@
 		59960C161FDB2F370020B74E /* ImageAndCamaraViewerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59960C151FDB2F370020B74E /* ImageAndCamaraViewerTests.swift */; };
 		59960C211FDB32300020B74E /* CamaraHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59960C201FDB32300020B74E /* CamaraHandler.swift */; };
 		59960C231FDBFAA80020B74E /* AVCaptureStillImageOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59960C221FDBFAA80020B74E /* AVCaptureStillImageOutput.swift */; };
+		59BFDD811FE8E6330064CE9C /* ImageFrames.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59BFDD801FE8E6330064CE9C /* ImageFrames.swift */; };
 		7F3F9B6620E03D858DA83F77 /* Pods_ImageAndCamaraViewerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0BFCC48F591699680786548 /* Pods_ImageAndCamaraViewerTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -54,6 +55,7 @@
 		59960C171FDB2F370020B74E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		59960C201FDB32300020B74E /* CamaraHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CamaraHandler.swift; sourceTree = "<group>"; };
 		59960C221FDBFAA80020B74E /* AVCaptureStillImageOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AVCaptureStillImageOutput.swift; sourceTree = "<group>"; };
+		59BFDD801FE8E6330064CE9C /* ImageFrames.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageFrames.swift; sourceTree = "<group>"; };
 		63B9C45E1F9D300845E644B4 /* Pods-ImageAndCamaraViewer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ImageAndCamaraViewer.release.xcconfig"; path = "Pods/Target Support Files/Pods-ImageAndCamaraViewer/Pods-ImageAndCamaraViewer.release.xcconfig"; sourceTree = "<group>"; };
 		74658A7064800262F1CC27D5 /* Pods-ImageAndCamaraViewerTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ImageAndCamaraViewerTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ImageAndCamaraViewerTests/Pods-ImageAndCamaraViewerTests.debug.xcconfig"; sourceTree = "<group>"; };
 		8D4F4B402C5A3FB6EECFBBC3 /* Pods-ImageAndCamaraViewer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ImageAndCamaraViewer.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ImageAndCamaraViewer/Pods-ImageAndCamaraViewer.debug.xcconfig"; sourceTree = "<group>"; };
@@ -130,6 +132,7 @@
 				593EAA551FDFB83C00B2F0F9 /* CropAreaView.swift */,
 				593EAA571FDFF75A00B2F0F9 /* CropingVC.swift */,
 				593EAA591FE0E46A00B2F0F9 /* ImgShowingVC.swift */,
+				59BFDD801FE8E6330064CE9C /* ImageFrames.swift */,
 			);
 			path = ImageAndCamaraViewer;
 			sourceTree = "<group>";
@@ -365,6 +368,7 @@
 			files = (
 				593EAA521FDE70BF00B2F0F9 /* CropImagesVC.swift in Sources */,
 				59960C061FDB2F350020B74E /* ImageAndCamaraViewer.xcdatamodeld in Sources */,
+				59BFDD811FE8E6330064CE9C /* ImageFrames.swift in Sources */,
 				593EAA5A1FE0E46A00B2F0F9 /* ImgShowingVC.swift in Sources */,
 				593EAA581FDFF75B00B2F0F9 /* CropingVC.swift in Sources */,
 				593EAA541FDF947C00B2F0F9 /* CropingFunction.swift in Sources */,

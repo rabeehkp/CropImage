@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="a40-Tp-AVe">
-    <device id="retina4_7" orientation="portrait">
+    <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -16,11 +16,11 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="ImageAndCamaraViewer" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Zqq-2Y-bRH">
-                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                                <rect key="frame" x="0.0" y="20" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <items>
                                     <navigationItem title="Title" id="PQZ-P3-3Rd">
@@ -33,13 +33,13 @@
                                 </items>
                             </navigationBar>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bcf-3u-vv4">
-                                <rect key="frame" x="0.0" y="64" width="375" height="446"/>
+                                <rect key="frame" x="0.0" y="64" width="385" height="347"/>
                                 <subviews>
                                     <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6Si-iQ-61e">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="446"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="385" height="347"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="W3P-9Q-AIo">
-                                                <rect key="frame" x="0.0" y="0.0" width="375" height="446"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="385" height="347"/>
                                             </imageView>
                                         </subviews>
                                         <constraints>
@@ -52,7 +52,7 @@
                                         </constraints>
                                     </scrollView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VDy-7e-HTR">
-                                        <rect key="frame" x="95" y="138" width="185" height="169"/>
+                                        <rect key="frame" x="95" y="138" width="195" height="70"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </view>
                                 </subviews>
@@ -73,7 +73,7 @@
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kUg-L4-bpT">
-                                <rect key="frame" x="118" y="583" width="139" height="64"/>
+                                <rect key="frame" x="118" y="484" width="149" height="64"/>
                                 <color key="backgroundColor" red="0.071762628853321075" green="0.12701818346977234" blue="0.27633622288703918" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" image="attachment(color)"/>
                                 <connections>
@@ -136,20 +136,20 @@
             <objects>
                 <viewController storyboardIdentifier="CropImagesVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BOH-G5-u9J" customClass="CropImagesVC" customModule="ImageAndCamaraViewer" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="jtO-4F-oKc">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vTK-Wi-gwB">
-                                <rect key="frame" x="0.0" y="64" width="375" height="445"/>
+                                <rect key="frame" x="0.0" y="64" width="320" height="346"/>
                                 <subviews>
                                     <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PCE-uD-Xj9">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="445"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="346"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="6wD-jt-Q41">
-                                                <rect key="frame" x="0.0" y="0.0" width="375" height="445"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="320" height="346"/>
                                             </imageView>
                                             <view contentMode="scaleToFill" restorationIdentifier="CropAreaView" translatesAutoresizingMaskIntoConstraints="NO" id="GdU-1R-28P" customClass="CropAreaView" customModule="ImageAndCamaraViewer" customModuleProvider="target">
-                                                <rect key="frame" x="42" y="133" width="290" height="178"/>
+                                                <rect key="frame" x="14.5" y="83.5" width="290" height="178"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <color key="tintColor" red="0.095067776739597321" green="0.28685256838798523" blue="0.99348145723342896" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
@@ -179,7 +179,7 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Quf-fQ-gUd">
-                                <rect key="frame" x="283" y="518" width="76" height="71"/>
+                                <rect key="frame" x="228" y="419" width="76" height="71"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qob-v4-8FK">
                                         <rect key="frame" x="5" y="5" width="66" height="61"/>
@@ -200,7 +200,7 @@
                                 </constraints>
                             </view>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="90n-cf-8uG">
-                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                                <rect key="frame" x="0.0" y="20" width="320" height="44"/>
                                 <items>
                                     <navigationItem title="Title" id="ho8-dz-t7g">
                                         <barButtonItem key="leftBarButtonItem" title="Crop" id="WAy-H0-NHR">
@@ -284,13 +284,19 @@
             <objects>
                 <viewController storyboardIdentifier="ImgShowingVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="7lz-MB-FVl" customClass="ImgShowingVC" customModule="ImageAndCamaraViewer" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Vj3-nh-mEp">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <navigationBar contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="twa-Z3-wI7">
-                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="twa-Z3-wI7">
+                                <rect key="frame" x="0.0" y="20" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <textAttributes key="titleTextAttributes">
+                                    <fontDescription key="fontDescription" name="HiraMinProN-W3" family="Hiragino Mincho ProN" pointSize="17"/>
+                                    <color key="textColor" red="0.090810485184192657" green="0.33650249242782593" blue="0.49325615167617798" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </textAttributes>
                                 <items>
-                                    <navigationItem title="Title" id="hDe-m1-nnc">
+                                    <navigationItem title="Croped Photo" id="hDe-m1-nnc">
                                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="7yt-Np-9KB">
                                             <color key="tintColor" red="0.071762628853321075" green="0.12701818346977234" blue="0.27633622288703918" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <connections>
@@ -306,21 +312,19 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="73W-78-m8R">
-                                <rect key="frame" x="0.0" y="64" width="375" height="290"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="290" id="RC4-Do-teC"/>
-                                </constraints>
-                            </imageView>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ltF-x1-Lpe">
+                                <rect key="frame" x="0.0" y="95" width="320" height="212"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="73W-78-m8R">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="212"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstItem="73W-78-m8R" firstAttribute="centerX" secondItem="Vj3-nh-mEp" secondAttribute="centerX" id="Dji-pa-agG"/>
-                            <constraint firstItem="73W-78-m8R" firstAttribute="top" secondItem="twa-Z3-wI7" secondAttribute="bottom" id="MOt-ob-1fg"/>
-                            <constraint firstItem="73W-78-m8R" firstAttribute="trailing" secondItem="qRT-JD-J2Q" secondAttribute="trailing" id="W52-wM-3Ku"/>
-                            <constraint firstItem="73W-78-m8R" firstAttribute="centerY" secondItem="Vj3-nh-mEp" secondAttribute="centerY" constant="-124.5" id="dLr-tc-yHR"/>
-                            <constraint firstItem="73W-78-m8R" firstAttribute="leading" secondItem="qRT-JD-J2Q" secondAttribute="leading" id="o81-LN-KRe"/>
-                        </constraints>
                         <viewLayoutGuide key="safeArea" id="qRT-JD-J2Q"/>
                     </view>
                     <connections>
@@ -331,18 +335,18 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5Oc-H8-NCZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="681" y="974"/>
+            <point key="canvasLocation" x="680.79999999999995" y="973.76311844077964"/>
         </scene>
         <!--CropingVC-->
         <scene sceneID="7oS-GT-mTw">
             <objects>
                 <viewController storyboardIdentifier="CropingVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="a40-Tp-AVe" customClass="CropingVC" customModule="ImageAndCamaraViewer" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="NIK-aB-PrF">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="M1z-Qv-JzS">
-                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                                <rect key="frame" x="0.0" y="20" width="320" height="44"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <textAttributes key="titleTextAttributes">
                                     <fontDescription key="fontDescription" name="HiraMinProN-W3" family="Hiragino Mincho ProN" pointSize="17"/>
@@ -366,13 +370,13 @@
                                 </items>
                             </navigationBar>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3KK-0N-aGv">
-                                <rect key="frame" x="0.0" y="64" width="375" height="408"/>
+                                <rect key="frame" x="0.0" y="64" width="320" height="241"/>
                                 <subviews>
                                     <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IMU-KO-KO5">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="408"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="241"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ZAd-kK-hNJ">
-                                                <rect key="frame" x="0.0" y="0.0" width="375" height="408"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="320" height="241"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </imageView>
                                         </subviews>
@@ -387,31 +391,31 @@
                                         </constraints>
                                     </scrollView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XsB-AX-E8d" customClass="CropAreaView" customModule="ImageAndCamaraViewer" customModuleProvider="target">
-                                        <rect key="frame" x="88" y="104" width="199" height="200"/>
+                                        <rect key="frame" x="88" y="70" width="144" height="101"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </view>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstItem="XsB-AX-E8d" firstAttribute="top" secondItem="3KK-0N-aGv" secondAttribute="top" constant="104" id="6W9-M5-q47"/>
+                                    <constraint firstItem="XsB-AX-E8d" firstAttribute="leading" secondItem="3KK-0N-aGv" secondAttribute="leading" constant="88" id="4ow-Ar-1jw"/>
+                                    <constraint firstAttribute="trailing" secondItem="XsB-AX-E8d" secondAttribute="trailing" constant="88" id="FGg-zx-AGK"/>
                                     <constraint firstItem="IMU-KO-KO5" firstAttribute="centerX" secondItem="3KK-0N-aGv" secondAttribute="centerX" id="Jzd-o5-EEu"/>
-                                    <constraint firstItem="XsB-AX-E8d" firstAttribute="centerX" secondItem="3KK-0N-aGv" secondAttribute="centerX" id="Kw1-9X-KEN"/>
-                                    <constraint firstItem="XsB-AX-E8d" firstAttribute="centerY" secondItem="3KK-0N-aGv" secondAttribute="centerY" id="LZq-QP-RuV"/>
-                                    <constraint firstAttribute="trailing" secondItem="XsB-AX-E8d" secondAttribute="trailing" constant="88" id="Oqa-dm-ypL"/>
+                                    <constraint firstItem="XsB-AX-E8d" firstAttribute="top" secondItem="3KK-0N-aGv" secondAttribute="top" constant="70" id="OEM-oO-P7x"/>
                                     <constraint firstItem="IMU-KO-KO5" firstAttribute="centerY" secondItem="3KK-0N-aGv" secondAttribute="centerY" id="QEc-KZ-2HD"/>
                                     <constraint firstAttribute="bottom" secondItem="IMU-KO-KO5" secondAttribute="bottom" id="Rco-re-vAC"/>
-                                    <constraint firstAttribute="bottom" secondItem="XsB-AX-E8d" secondAttribute="bottom" constant="104" id="Scz-jW-4WP"/>
-                                    <constraint firstItem="XsB-AX-E8d" firstAttribute="leading" secondItem="3KK-0N-aGv" secondAttribute="leading" constant="88" id="XZy-Jq-2zU"/>
+                                    <constraint firstItem="XsB-AX-E8d" firstAttribute="centerY" secondItem="3KK-0N-aGv" secondAttribute="centerY" id="YIm-6k-FTc"/>
                                     <constraint firstItem="IMU-KO-KO5" firstAttribute="top" secondItem="3KK-0N-aGv" secondAttribute="top" id="at8-kM-Zns"/>
+                                    <constraint firstItem="XsB-AX-E8d" firstAttribute="centerX" secondItem="3KK-0N-aGv" secondAttribute="centerX" id="bl6-w7-I2l"/>
+                                    <constraint firstAttribute="bottom" secondItem="XsB-AX-E8d" secondAttribute="bottom" constant="70" id="phn-mg-dnY"/>
                                     <constraint firstItem="IMU-KO-KO5" firstAttribute="leading" secondItem="3KK-0N-aGv" secondAttribute="leading" id="wzA-X2-3Nr"/>
                                     <constraint firstAttribute="trailing" secondItem="IMU-KO-KO5" secondAttribute="trailing" id="ycx-b1-g65"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="F5k-P4-RaF">
-                                <rect key="frame" x="16" y="620" width="343" height="95"/>
+                                <rect key="frame" x="16" y="521" width="288" height="95"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tcr-gK-cx2">
-                                        <rect key="frame" x="0.0" y="8" width="343" height="34"/>
+                                        <rect key="frame" x="0.0" y="8" width="288" height="34"/>
                                         <color key="backgroundColor" red="0.071762628853321075" green="0.12701818346977234" blue="0.27633622288703918" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="34" id="5D5-yt-H0q"/>
@@ -424,7 +428,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M5m-F6-deM">
-                                        <rect key="frame" x="0.0" y="53" width="343" height="34"/>
+                                        <rect key="frame" x="0.0" y="53" width="288" height="34"/>
                                         <color key="backgroundColor" red="0.071762628853321075" green="0.12701818346977234" blue="0.27633622288703918" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="34" id="H39-Ij-ilI"/>
@@ -449,7 +453,7 @@
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ipd-0k-LdO">
-                                <rect key="frame" x="16" y="620" width="343" height="42"/>
+                                <rect key="frame" x="16" y="521" width="288" height="42"/>
                                 <color key="backgroundColor" red="0.071762628853321075" green="0.12701818346977234" blue="0.27633622288703918" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="18"/>
                                 <state key="normal" title="Photos">
@@ -469,7 +473,7 @@
                             <constraint firstAttribute="bottomMargin" secondItem="F5k-P4-RaF" secondAttribute="bottom" constant="-48" id="QSP-Gd-QOW"/>
                             <constraint firstItem="C19-SN-1UN" firstAttribute="trailing" secondItem="Ipd-0k-LdO" secondAttribute="trailing" constant="16" id="SPn-jK-rQH"/>
                             <constraint firstItem="C19-SN-1UN" firstAttribute="bottom" secondItem="Ipd-0k-LdO" secondAttribute="bottom" constant="5" id="WpK-vG-9Wt"/>
-                            <constraint firstAttribute="bottom" secondItem="3KK-0N-aGv" secondAttribute="bottom" constant="195" id="eEn-R5-c4f"/>
+                            <constraint firstAttribute="bottom" secondItem="3KK-0N-aGv" secondAttribute="bottom" constant="263" id="eEn-R5-c4f"/>
                             <constraint firstItem="3KK-0N-aGv" firstAttribute="top" secondItem="M1z-Qv-JzS" secondAttribute="bottom" id="fkQ-Fa-y51"/>
                             <constraint firstItem="Ipd-0k-LdO" firstAttribute="leading" secondItem="C19-SN-1UN" secondAttribute="leading" constant="16" id="jeP-6W-kfW"/>
                             <constraint firstItem="C19-SN-1UN" firstAttribute="trailing" secondItem="F5k-P4-RaF" secondAttribute="trailing" constant="16" id="pyG-R9-RRq"/>
@@ -494,7 +498,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Lmd-PG-HGq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1540" y="115.59220389805098"/>
+            <point key="canvasLocation" x="1539.375" y="115.14084507042254"/>
         </scene>
     </scenes>
     <resources>

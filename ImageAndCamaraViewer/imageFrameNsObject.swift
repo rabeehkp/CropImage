@@ -76,5 +76,10 @@ class ImageFrameNsObject: NSObject {
         cropButton.isEnabled = visibility
         clearButton.isEnabled = visibility
     }
+    func alert(vcSelf : UIViewController){
+        let alert  = UIAlertController(title: "Warning", message: "You don't have camera or Fail to access camerater", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        vcSelf.present(alert, animated: true, completion: nil)
+    }
     
 }

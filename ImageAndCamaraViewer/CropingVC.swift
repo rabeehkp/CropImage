@@ -72,17 +72,18 @@ class CropingVC: UIViewController , UIScrollViewDelegate,UINavigationControllerD
     //Show image from device
     @IBAction func showDeviceGalleryBtn(_ sender: UIButton) {
         cameraButtonClicked = false
-        if cameraButtonClicked == false{
             functions.photoLoad(vcSelf: self, buttonClicked: cameraButtonClicked)
-        }
         functions.animationTransform(showBtnView: showBtnView, showButtons: showButtons)
     }
     
     // show camara
     @IBAction func showCamaraBtn(_ sender: UIButton) {
         cameraButtonClicked = true
-        if cameraButtonClicked == true{
-            functions.photoLoad(vcSelf: self, buttonClicked: cameraButtonClicked)
+        if(UIImagePickerController .isSourceTypeAvailable(.camera)){
+        functions.photoLoad(vcSelf: self, buttonClicked: cameraButtonClicked)
+        }
+        else{
+            functions.alert(vcSelf: self)
         }
         functions.animationTransform(showBtnView: showBtnView, showButtons: showButtons)
         

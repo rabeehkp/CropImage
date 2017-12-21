@@ -357,13 +357,13 @@
                                         <barButtonItem key="leftBarButtonItem" title="Clear" id="9JU-tv-YXI">
                                             <color key="tintColor" red="0.071762628853321075" green="0.12701818346977234" blue="0.27633622288703918" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <connections>
-                                                <action selector="ClearBtn:" destination="a40-Tp-AVe" id="4Zs-9E-wOl"/>
+                                                <action selector="clearBtn:" destination="a40-Tp-AVe" id="BDy-r3-Pdo"/>
                                             </connections>
                                         </barButtonItem>
                                         <barButtonItem key="rightBarButtonItem" title="Crop" id="VF5-9Y-hF9">
                                             <color key="tintColor" red="0.071762628853321075" green="0.12701818346977234" blue="0.27633622288703918" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <connections>
-                                                <action selector="CropBtn:" destination="a40-Tp-AVe" id="ley-NQ-BOo"/>
+                                                <action selector="cropBtn:" destination="a40-Tp-AVe" id="HFc-oB-X9J"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>
@@ -424,7 +424,7 @@
                                             <color key="titleColor" red="0.94350069761276245" green="0.9849504828453064" blue="0.97128838300704956" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
                                         <connections>
-                                            <action selector="ShowCamaraBtn:" destination="a40-Tp-AVe" eventType="touchUpInside" id="2sT-QX-3Mp"/>
+                                            <action selector="showCamaraBtn:" destination="a40-Tp-AVe" eventType="touchUpInside" id="Jqa-3Z-nO0"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M5m-F6-deM">
@@ -437,7 +437,7 @@
                                             <color key="titleColor" red="0.94350069761276245" green="0.9849504828453064" blue="0.97128838300704956" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
                                         <connections>
-                                            <action selector="ShowDeviceGalleryBtn:" destination="a40-Tp-AVe" eventType="touchUpInside" id="Pwd-F6-DOS"/>
+                                            <action selector="showDeviceGalleryBtn:" destination="a40-Tp-AVe" eventType="touchUpInside" id="Sig-nN-bx3"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -460,7 +460,7 @@
                                     <color key="titleColor" red="0.94350069761276245" green="0.9849504828453064" blue="0.97128838300704956" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <action selector="ShowButtons:" destination="a40-Tp-AVe" eventType="touchUpInside" id="69D-YZ-fJ3"/>
+                                    <action selector="showButtons:" destination="a40-Tp-AVe" eventType="touchUpInside" id="8Ut-9m-UIE"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -484,16 +484,16 @@
                         <viewLayoutGuide key="safeArea" id="C19-SN-1UN"/>
                     </view>
                     <connections>
-                        <outlet property="ClearButton" destination="9JU-tv-YXI" id="SR4-Ah-ODt"/>
-                        <outlet property="CropButton" destination="VF5-9Y-hF9" id="dtg-yl-BZ3"/>
-                        <outlet property="CropingFrameView" destination="XsB-AX-E8d" id="Mls-iT-ayH"/>
-                        <outlet property="ShowBtnView" destination="F5k-P4-RaF" id="bPM-3j-gwg"/>
-                        <outlet property="ShowButtons" destination="Ipd-0k-LdO" id="Sym-9B-7PD"/>
-                        <outlet property="ShowCamera" destination="tcr-gK-cx2" id="9SO-0S-cnG"/>
-                        <outlet property="ShowDeviceGallery" destination="M5m-F6-deM" id="ri3-cW-rPi"/>
-                        <outlet property="ShowImages" destination="ZAd-kK-hNJ" id="h4Y-RV-JCj"/>
-                        <outlet property="SubView" destination="3KK-0N-aGv" id="H0l-5J-1rV"/>
+                        <outlet property="clearButton" destination="9JU-tv-YXI" id="w9R-9r-tpq"/>
+                        <outlet property="cropButton" destination="VF5-9Y-hF9" id="Ls2-KD-ZaI"/>
+                        <outlet property="cropingFrameView" destination="XsB-AX-E8d" id="TWC-yv-4uB"/>
                         <outlet property="scrollView" destination="IMU-KO-KO5" id="yPN-9K-XZq"/>
+                        <outlet property="showBtnView" destination="F5k-P4-RaF" id="6oh-Lv-tHn"/>
+                        <outlet property="showButtons" destination="Ipd-0k-LdO" id="s58-N9-uOP"/>
+                        <outlet property="showCamera" destination="tcr-gK-cx2" id="iyd-hj-TKA"/>
+                        <outlet property="showDeviceGallery" destination="M5m-F6-deM" id="HfC-ub-bhP"/>
+                        <outlet property="showImages" destination="ZAd-kK-hNJ" id="3Nt-9v-KrD"/>
+                        <outlet property="subView" destination="3KK-0N-aGv" id="Ryg-3q-bXj"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Lmd-PG-HGq" userLabel="First Responder" sceneMemberID="firstResponder"/>

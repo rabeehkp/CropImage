@@ -8,8 +8,9 @@
 
 import UIKit
 
-class imageFrameNsObject: NSObject {
-    
+class ImageFrameNsObject: NSObject {
+    //MARK: -Variables
+    var clicked : Bool = true
     //MARK: -ImageFrame set
     func imageFrames(imageView : UIImageView)->CGRect{
         let imageViewSize = imageView.frame.size
@@ -21,7 +22,8 @@ class imageFrameNsObject: NSObject {
             let width = imageSize.width * scaleFactor
             let topLeftX = (imageViewSize.width - width) * 0.5
             return CGRect(x: topLeftX, y: 0, width: width, height: imageViewSize.height)
-        }else{
+        }
+        else{
             let scalFactor = imageViewSize.width / imageSize.width
             let height = imageSize.height * scalFactor
             let topLeftY = (imageViewSize.height - height) * 0.5
@@ -29,68 +31,52 @@ class imageFrameNsObject: NSObject {
         }
     }
     
-    //MARK: -Library Load
-    func PhotoLoad( vcSelf : UIViewController){
-        if UIImagePickerController.isSourceTypeAvailable(.photoLibrary) {
-            let imagePicker = UIImagePickerController()
+    //MARK: -Library and camera Load
+    func photoLoad( vcSelf : UIViewController, buttonClicked : Bool  ){
+        let check : UIImagePickerControllerSourceType = buttonClicked == true ? .camera : .photoLibrary
     
+            let imagePicker = UIImagePickerController()
             imagePicker.delegate = vcSelf as? UIImagePickerControllerDelegate & UINavigationControllerDelegate
-            imagePicker.sourceType = .photoLibrary
+            imagePicker.sourceType = check
             imagePicker.allowsEditing = true
             vcSelf.present(imagePicker, animated: true, completion: nil)
         }
-    }
-
-    //MARK: -Camara Load
-    func CameraLoad( vcSelf : UIViewController){
-        if UIImagePickerController.isSourceTypeAvailable(.camera) {
-        
-            let imagePicker = UIImagePickerController()
-            imagePicker.delegate = vcSelf as? UIImagePickerControllerDelegate & UINavigationControllerDelegate
-            imagePicker.sourceType = .camera
-            imagePicker.allowsEditing = false
-            vcSelf.present(imagePicker, animated: true, completion: nil)
-        }
-    }
+    
     
     //MARK: -Button Animation
-    func AnimationTransform(ShowBtnView: UIView,ShowButtons:UIButton){
-        if ShowBtnView.transform == .identity {
+    func animationTransform(showBtnView: UIView,showButtons:UIButton){
+        if showBtnView.transform == .identity {
             UIView.animate(withDuration: 0.3, animations: {
-                ShowBtnView.transform = CGAffineTransform(translationX: 0, y: -100)
+                showBtnView.transform = CGAffineTransform(translationX: 0, y: -100)
             }) { (true) in
             }
-            ShowBtnView.isHidden = false
-            ShowButtons.setTitle("Cancel", for: .normal)
+            showBtnView.isHidden = false
+            showButtons.setTitle("Cancel", for: .normal)
         }
         else{
             UIView.animate(withDuration: 0.3, animations: {
-                ShowBtnView.transform = .identity
+                showBtnView.transform = .identity
             }, completion: { (true) in
-                ShowBtnView.isHidden = true
-                ShowButtons.setTitle("Photos", for: .normal)
+                showBtnView.isHidden = true
+                showButtons.setTitle("Photos", for: .normal)
             })
         }
     }
     
     //MARK: -Layer Changes
-    func layerChanges(ShowCamera : UIButton , ShowDeviceGallery: UIButton, ShowButtons: UIButton, ShowBtnView: UIView, CropingFrameView: UIView){
-        ShowCamera.layer.cornerRadius = 12
-        ShowDeviceGallery.layer.cornerRadius = 12
-        ShowButtons.layer.cornerRadius = 12
-        ShowBtnView.isHidden = true
-        CropingFrameView.layer.borderColor = UIColor.white.cgColor
-        CropingFrameView.layer.borderWidth = 2
+    func layerChanges(showCamera : UIButton , showDeviceGallery: UIButton, showButtons: UIButton, showBtnView: UIView, cropingFrameView: UIView){
+        showCamera.layer.cornerRadius = 12
+        showDeviceGallery.layer.cornerRadius = 12
+        showButtons.layer.cornerRadius = 12
+        showBtnView.isHidden = true
+        cropingFrameView.layer.borderColor = UIColor.white.cgColor
+        cropingFrameView.layer.borderWidth = 2
     }
     //MARK: -IF Condition
-    func imageNilNot(CropButton: UIBarButtonItem, ClearButton : UIBarButtonItem , ShowImages :UIImageView){
-        if ShowImages.image == nil{
-            CropButton.isEnabled = false
-            ClearButton.isEnabled = false
-        }else{
-            CropButton.isEnabled = true
-            ClearButton.isEnabled = true
-        }
+    func imageNilNot(cropButton: UIBarButtonItem, clearButton : UIBarButtonItem , showImages :UIImageView){
+        let visibility = showImages.image == nil ? false : true
+        cropButton.isEnabled = visibility
+        clearButton.isEnabled = visibility
     }
     
 }

@@ -14,7 +14,7 @@ class CropingVC: UIViewController , UIScrollViewDelegate,UINavigationControllerD
     var zoomScale = Int()
     var functions = ImageFrameNsObject()
     var cameraButtonClicked : Bool = false
-//    var libraryButtonClicked : Bool = false
+    //    var libraryButtonClicked : Bool = false
     
     //MARK: -Outlets
     @IBOutlet weak var subView: UIView!
@@ -54,7 +54,7 @@ class CropingVC: UIViewController , UIScrollViewDelegate,UINavigationControllerD
         if let originalOrientation = self.showImages.image?.imageOrientation, let scale = self.showImages.image?.scale ,let croppedCGImage = showImages.image?.cgImage?.cropping(to: cropArea) {
             let croppedImage = UIImage(cgImage: croppedCGImage, scale: (scale), orientation: (originalOrientation))
             img = croppedImage
-            }
+        }
         //Navigation
         self.ImgShowingVC(img: img)
     }
@@ -94,7 +94,7 @@ class CropingVC: UIViewController , UIScrollViewDelegate,UINavigationControllerD
     //MARK: -ImagePicker Delegate
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         if let image = info[UIImagePickerControllerOriginalImage] as? UIImage{
-        showImages.image = image
+            showImages.image = image
         }
         dismiss(animated:true, completion: nil)
     }
@@ -111,7 +111,7 @@ class CropingVC: UIViewController , UIScrollViewDelegate,UINavigationControllerD
         get{
             var factor = CGFloat()
             if let image = showImages.image{
-            factor = image.size.width/view.frame.width
+                factor = image.size.width/view.frame.width
             }
             let scale = 1/scrollView.zoomScale
             let imageFrame = functions.imageFrames(imageView: showImages)

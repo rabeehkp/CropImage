@@ -9,8 +9,7 @@
 import UIKit
 
 class ImageFrameNsObject: NSObject {
-    //MARK: -Variables
-    var clicked : Bool = true
+    
     //MARK: -ImageFrame set
     func imageFrames(imageView : UIImageView)->CGRect{
         let imageViewSize = imageView.frame.size
@@ -34,13 +33,12 @@ class ImageFrameNsObject: NSObject {
     //MARK: -Library and camera Load
     func photoLoad( vcSelf : UIViewController, buttonClicked : Bool  ){
         let check : UIImagePickerControllerSourceType = buttonClicked == true ? .camera : .photoLibrary
-    
-            let imagePicker = UIImagePickerController()
-            imagePicker.delegate = vcSelf as? UIImagePickerControllerDelegate & UINavigationControllerDelegate
-            imagePicker.sourceType = check
-            imagePicker.allowsEditing = true
-            vcSelf.present(imagePicker, animated: true, completion: nil)
-        }
+        let imagePicker = UIImagePickerController()
+        imagePicker.delegate = vcSelf as? UIImagePickerControllerDelegate & UINavigationControllerDelegate
+        imagePicker.sourceType = check
+        imagePicker.allowsEditing = true
+        vcSelf.present(imagePicker, animated: true, completion: nil)
+    }
     
     
     //MARK: -Button Animation

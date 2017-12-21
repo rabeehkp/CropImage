@@ -391,14 +391,12 @@
                                         </constraints>
                                     </scrollView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XsB-AX-E8d" customClass="CropAreaView" customModule="ImageAndCamaraViewer" customModuleProvider="target">
-                                        <rect key="frame" x="88" y="70" width="144" height="101"/>
+                                        <rect key="frame" x="70" y="70" width="180" height="101"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </view>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstItem="XsB-AX-E8d" firstAttribute="leading" secondItem="3KK-0N-aGv" secondAttribute="leading" constant="88" id="4ow-Ar-1jw"/>
-                                    <constraint firstAttribute="trailing" secondItem="XsB-AX-E8d" secondAttribute="trailing" constant="88" id="FGg-zx-AGK"/>
                                     <constraint firstItem="IMU-KO-KO5" firstAttribute="centerX" secondItem="3KK-0N-aGv" secondAttribute="centerX" id="Jzd-o5-EEu"/>
                                     <constraint firstItem="XsB-AX-E8d" firstAttribute="top" secondItem="3KK-0N-aGv" secondAttribute="top" constant="70" id="OEM-oO-P7x"/>
                                     <constraint firstItem="IMU-KO-KO5" firstAttribute="centerY" secondItem="3KK-0N-aGv" secondAttribute="centerY" id="QEc-KZ-2HD"/>
@@ -407,6 +405,8 @@
                                     <constraint firstItem="IMU-KO-KO5" firstAttribute="top" secondItem="3KK-0N-aGv" secondAttribute="top" id="at8-kM-Zns"/>
                                     <constraint firstItem="XsB-AX-E8d" firstAttribute="centerX" secondItem="3KK-0N-aGv" secondAttribute="centerX" id="bl6-w7-I2l"/>
                                     <constraint firstAttribute="bottom" secondItem="XsB-AX-E8d" secondAttribute="bottom" constant="70" id="phn-mg-dnY"/>
+                                    <constraint firstAttribute="trailing" secondItem="XsB-AX-E8d" secondAttribute="trailing" constant="70" id="tuN-5w-SrS"/>
+                                    <constraint firstItem="XsB-AX-E8d" firstAttribute="leading" secondItem="3KK-0N-aGv" secondAttribute="leading" constant="70" id="wWV-EN-N6L"/>
                                     <constraint firstItem="IMU-KO-KO5" firstAttribute="leading" secondItem="3KK-0N-aGv" secondAttribute="leading" id="wzA-X2-3Nr"/>
                                     <constraint firstAttribute="trailing" secondItem="IMU-KO-KO5" secondAttribute="trailing" id="ycx-b1-g65"/>
                                 </constraints>
@@ -484,6 +484,7 @@
                         <viewLayoutGuide key="safeArea" id="C19-SN-1UN"/>
                     </view>
                     <connections>
+                        <outlet property="ShowButtons" destination="Ipd-0k-LdO" id="Sym-9B-7PD"/>
                         <outlet property="clearButton" destination="9JU-tv-YXI" id="w9R-9r-tpq"/>
                         <outlet property="cropButton" destination="VF5-9Y-hF9" id="Ls2-KD-ZaI"/>
                         <outlet property="cropingFrameView" destination="XsB-AX-E8d" id="TWC-yv-4uB"/>
